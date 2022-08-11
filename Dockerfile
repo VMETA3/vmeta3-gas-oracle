@@ -4,7 +4,7 @@ RUN apk add --no-cache make gcc musl-dev linux-headers git jq bash
 
 COPY ./gas-oracle /gas-oracle
 
-RUN cd /gas-oracle && make gas-oracle
+RUN cd /gas-oracle && rm -rf .git && make gas-oracle
 
 FROM alpine:3.15
 
